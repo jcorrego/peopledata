@@ -40,25 +40,33 @@ class TriviaController extends Controller
         $this->validate(request(), [
             'option' => 'required',
         ]);
-        $option = request('option');
+        $option                   = request('option');
         $this->session->questions = array_unique(array_merge($this->session->questions, [$question->id]));
         $this->session->save();
         $results = [];
-        if($option == 'answer'){
-            $results['status'] = 'success';
-            $results['message'] = 'Muy bien!! has obtenido <strong>'. $question->points .'</strong> puntos!';
-            
+        if ($option == 'answer') {
+            $results['status']  = 'success';
+            $results['message'] = 'Muy bien!! has obtenido <strong>' . $question->points . '</strong> puntos!';
+
         } else {
-            $results['status'] = 'error';
+            $results['status']  = 'error';
             $results['message'] = 'Lo sentimos!! no has obtenido puntos...';
         }
+
         return $results;
     }
 
     public function start()
     {
-        $questions = Question::whereNotIn('id', $this->session->questions)->get();
-        if($questions->count()) $question = $questions->random();
+        $level = request()->get('level', 'easy');
+        if ($level) {
+            $questions = Question::whereNotIn('id', $this->session->questions)
+                                 ->where('level', $level)
+                                 ->get();
+        } else {
+            $questions = Question::whereNotIn('id', $this->session->questions)->get();
+        }
+        if ($questions->count()) $question = $questions->random();
         else return redirect('/games/trivia');
 
         return redirect('/games/trivia/questions/' . $question->id);
@@ -68,6 +76,7 @@ class TriviaController extends Controller
     {
         $this->session->questions = [];
         $this->session->save();
+
         return redirect('/games/trivia');
     }
 }

@@ -30,7 +30,13 @@
             </div>
             <div class="card-footer">
                 <button v-if="!finished" @click="updateAnswer" class="btn btn-success">Enviar</button>
-                <a v-else href="/games/trivia/start" class="btn btn-success">Siguiente pregunta</a>
+                <div v-else>
+                    Siguiente pregunta: 
+                    <a href="/games/trivia/start?level=easy" class="btn btn-success">Fácil</a>    
+                    <a href="/games/trivia/start?level=medium" class="btn btn-warning">Medio</a>    
+                    <a href="/games/trivia/start?level=hard" class="btn btn-danger">Difícil</a>    
+                </div>
+                
             </div>
         </div>
         <spinner v-if="loading"></spinner>
