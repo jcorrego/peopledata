@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'period' => env('CURRENT_PERIOD', '2020-1')
+    'period' => env('CURRENT_PERIOD', '2020-2')
 ];

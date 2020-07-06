@@ -1,5 +1,7 @@
 <template>
   <loading-view :loading="initialLoading" :dusk="lens + '-lens-component'">
+    <custom-lens-header class="mb-3" :resource-name="resourceName" />
+
     <div v-if="shouldShowCards">
       <cards
         v-if="smallCards.length > 0"
@@ -111,6 +113,10 @@
             :trashed="trashed"
             :per-page="perPage"
             :per-page-options="perPageOptions"
+            :show-trashed-option="
+              authorizedToForceDeleteAnyResources ||
+              authorizedToRestoreAnyResources
+            "
             :lens="lens"
             @clear-selected-filters="clearSelectedFilters(lens)"
             @filter-changed="filterChanged"
