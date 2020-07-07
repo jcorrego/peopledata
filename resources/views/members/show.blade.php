@@ -1,8 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.newapp')
 
 @section('title')
-    {{ $member->name }} :: Detalles de miembro @parent
-@endsection
+    <div class="md:flex md:items-center md:justify-between">
+        <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-white sm:text-3xl sm:leading-9 sm:truncate">
+                {{ $member->name }}
+            </h2>
+        </div>
+    </div>
+ @endsection
 
 @section('content')
     <div class="container">

@@ -21,9 +21,9 @@
 </template>
 
 <script>
-  import PNotify from '../../../../../node_modules/pnotify/dist/es/PNotify.js';
+  import PNotify from '../../../../../node_modules/@pnotify/core/dist/PNotify.js';
 
-  PNotify.defaults.styling = "bootstrap4"; // Bootstrap version 4
+  // PNotify.defaults.styling = "bootstrap4"; // Bootstrap version 4
 
   export default {
     props: ['ini_status', 'course', 'member'],

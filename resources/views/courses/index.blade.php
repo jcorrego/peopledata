@@ -1,7 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.newapp')
 
 @section('title')
-    Educación Cristiana @parent
+    <div class="md:flex md:items-center md:justify-between">
+        <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-white sm:text-3xl sm:leading-9 sm:truncate">
+                Lista de Cursos <small>{{ $period }}</small>
+            </h2>
+        </div>
+    </div>
 @endsection
 
 @section('content')
@@ -24,25 +30,10 @@
                     </div>
                     <div class="col-md">
                         <a href="/courses/export?period={{ $period }}" class="btn btn-block btn-secondary mb-2"><i class="fal fa-file-excel"></i> Exportar Lista de Estudiantes</a>
-                        <a href="/members/unfinished/{{ $period }}" class="btn btn-block btn-secondary mb-2"><i class="fal fa-user-slash"></i> Ver deserciones</a>
+{{--                        <a href="/members/unfinished/{{ $period }}" class="btn btn-block btn-secondary mb-2"><i class="fal fa-user-slash"></i> Ver deserciones</a>--}}
                     </div>
                     <div class="col-md">
                         <compose-message label="Escribir a los Profes" :emails="{{ collect($professorEmails) }}"></compose-message>
-                        <a href="/courses/create" class="btn btn-primary btn-block mb-2">
-                            <i class="fal fa-plus"></i> Agregar clase
-                        </a>
-                    </div>
-                    <div class="col-md">
-                        <form action="/members/search" method="post">
-                            {{ csrf_field() }}
-                            <div>Buscar estudiante:</div>
-                            <div class="input-group mb-3">
-                                <input name="search" type="text" class="form-control" placeholder="Nombre del estudiante" aria-label="Nombre del estudiante" aria-describedby="button-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit" id="button-addon2"><i class="fal fa-search"></i></button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,11 @@
 <template>
     <div>
-        <button type="button" class="btn btn-block btn-primary mb-2" data-toggle="modal" data-target="#composeMessageModal">
-            <i class="fal fa-envelope"></i> {{ this.label }}
+        <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-400 focus:outline-none focus:border-indigo-600 focus:shadow-outline-indigo active:bg-indigo-600 transition ease-in-out duration-150" data-toggle="modal" data-target="#composeMessageModal">
+            <svg class="-ml-0.5 mr-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            {{ this.label }}
         </button>
         <div class="modal fade" id="composeMessageModal" tabindex="-1" role="dialog" aria-labelledby="composeMessageModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -36,8 +40,8 @@
 </template>
 
 <script>
-  import PNotify from '../../../../../node_modules/pnotify/dist/es/PNotify.js';
-  PNotify.defaults.styling = "bootstrap4"; 
+  import PNotify from '../../../../../node_modules/@pnotify/core/dist/PNotify.js';
+  // PNotify.defaults.styling = "bootstrap4"; 
   
   export default {
     props: {

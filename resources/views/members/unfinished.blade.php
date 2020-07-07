@@ -1,13 +1,18 @@
-@extends('layouts.app')
+@extends('layouts.newapp')
 
 @section('title')
-    Estudiantes sin terminar @parent
+    <div class="md:flex md:items-center md:justify-between">
+        <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-white sm:text-3xl sm:leading-9 sm:truncate">
+                Estudiantes que no completaron curso en {{ $period }}
+            </h2>
+        </div>
+    </div>
 @endsection
 
 @section('content')
     <div class="container">
         <div class="card">
-            <h5 class="card-header text-white bg-info">Estudiantes que no completaron curso en {{ $period }}</h5>
             <div class="card-body">
                 <a href="/courses/export?period={{ $period }}&status[]=didnt_start&status[]=didnt_finish" class="btn btn-secondary mb-2">Exportar Listado de Deserciones</a>
             </div>
