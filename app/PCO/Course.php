@@ -28,10 +28,17 @@ class Course extends Model
         return $this->belongsToMany(Member::class)->withPivot(['status','payment','notes'])->withTimestamps();
     }
 
-    /**
-     * @param $hour
-     * @return string
-     */
+    public function activeEmails()
+    {
+        $results = collect([]);
+        foreach ($this->members as $member){
+            if($member->pivot->status != 'didnt_start' && $member->pivot->status != 'didnt_finish' && $member->email){
+                $results->push($member->email);
+            }
+        }
+        return $results;
+    }
+    
     public function getHourAttribute($hour)
     {
         $time = Carbon::parse($hour);

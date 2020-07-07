@@ -15,8 +15,8 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ asset('js/dropzone.js') }}"></script>
     <!-- Fonts -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">

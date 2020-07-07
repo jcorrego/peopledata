@@ -190,8 +190,8 @@
 </template>
 
 <script>
-  import PNotify from '../../../../../node_modules/pnotify/dist/es/PNotify.js';
-  PNotify.defaults.styling = "bootstrap4"; 
+  import PNotify from '../../../../../node_modules/@pnotify/core/dist/PNotify.js';
+  // PNotify.defaults.styling = "bootstrap4"; 
   import moment from 'moment'
   
   export default {

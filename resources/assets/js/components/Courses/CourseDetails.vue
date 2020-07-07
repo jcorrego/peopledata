@@ -1,22 +1,8 @@
 <template>
     <div>
-        <div class="card">
-            <h5 class="card-header text-white bg-info">Estudiantes inscritos al curso</h5>
+        <div class="">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-5">
-                        <h5 class="card-title">{{ course.name }}<br>
-                            <small class="text-muted">{{ course.dayName }} <span v-if="course.hour !== '12:00 am'">{{ course.hour }}</span><br>
-                                <span v-if="course.value">${{ course.value }}</span><br>
-                                <span v-if="course.location">{{ course.location }}</span>
-                            </small>
-                        </h5>
-                        <compose-message :emails="activeEmails"></compose-message>
-                        <div class="row">
-                            <div class="col-md-6"><a target="_blank" :href="'/courses/'+course.id+'/students-pdf'" class="btn btn-primary btn-block">Formatos</a></div>
-                            <div class="col-md-6"><a target="_blank" :href="'/courses/'+course.id+'/courselist'" class="btn btn-info btn-block">Lista de clase</a></div>
-                        </div>
-                    </div>
                     <div class="col-md-1">
                         <img v-if="course.professor" :src="course.professor.image" :alt="course.professor.name" class="rounded-circle img-fluid img-thumbnail mb-1" width="100">
                     </div>
@@ -29,8 +15,17 @@
                             <small class="text-muted">Tel: {{ course.professor.phone }}</small>
                         </h6>
                     </div>
-                    <div class="col-md-2 text-right">
-                        <a :href="'/courses/'+ course.id + '/edit'" class="btn btn-primary"><i class="fal fa-edit"></i> Editar</a>
+                    <div class="col-md-7 text-right">
+                            <span class="inline-flex rounded-md shadow-sm">
+                              <a target="_blank" :href="'/courses/'+course.id+'/students-pdf'" class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 text-xs leading-4 font-medium rounded text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150">
+                                <i class="far fa-file-pdf mr-2"></i>Formatos PDF
+                              </a>
+                            </span>
+                            <span class="inline-flex rounded-md shadow-sm">
+                              <a target="_blank" :href="'/courses/'+course.id+'/courselist'" class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 text-xs leading-4 font-medium rounded text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150">
+                                <i class="far fa-file-pdf mr-2"></i>Lista de clase en PDF
+                              </a>
+                            </span>
                     </div>
                 </div>
             </div>

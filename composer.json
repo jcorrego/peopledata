@@ -11,7 +11,7 @@
         "facade/ignition": "^2.0",
         "fideloper/proxy": "^4.0",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^6.3",
+        "guzzlehttp/guzzle": "^7.0",
         "kabbouchi/nova-impersonate": "^1.1",
         "laravel/framework": "^7.0",
         "laravel/helpers": "^1.2",

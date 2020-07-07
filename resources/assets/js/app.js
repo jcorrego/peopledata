@@ -37,7 +37,11 @@ import Vue2TouchEvents from 'vue2-touch-events'
 Vue.use(Vue2TouchEvents)
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: () => ({
+        profileDropdown: false,
+        mobileMenu: false,
+    })
 });
 
 window.vm = app;

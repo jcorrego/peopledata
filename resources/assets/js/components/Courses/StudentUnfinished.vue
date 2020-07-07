@@ -46,8 +46,8 @@
 </template>
 
 <script>
-  import PNotify from '../../../../../node_modules/pnotify/dist/es/PNotify.js';
-  PNotify.defaults.styling = "bootstrap4"; // Bootstrap version 4
+  import PNotify from '../../../../../node_modules/@pnotify/core/dist/PNotify.js';
+  // PNotify.defaults.styling = "bootstrap4"; // Bootstrap version 4
   export default {
     props: ['member', 'course','course2','courses'],
     data () {
