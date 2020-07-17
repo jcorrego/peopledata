@@ -10,22 +10,22 @@
                 <br>
                 <small class="text-muted">Tel: {{ member.phone }}</small>
             </div>
-            <div class="col-md-2 text-center"><select @change="updateInscription" class="form-control" v-model="status">
-                <option value="signed">Pre-inscrito</option>
-                <option value="confirmed">Confirmado</option>
-                <option value="in_progress">En curso</option>
-                <option value="completed">Completado</option>
-                <option value="didnt_start">No llegó</option>
-                <option value="didnt_finish">Desertó</option>
-            </select></div>
-            <div class="col-md-2 text-center" v-if="value">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">$</div>
-                    </div>
-                    <input type="text" class="form-control" placeholder="0" v-model="payment" @keyup.enter="updateInscription" @blur="updateInscription">
-                </div>
-            </div>
+<!--            <div class="col-md-2 text-center"><select @change="updateInscription" class="form-control" v-model="status">-->
+<!--                <option value="signed">Pre-inscrito</option>-->
+<!--                <option value="confirmed">Confirmado</option>-->
+<!--                <option value="in_progress">En curso</option>-->
+<!--                <option value="completed">Completado</option>-->
+<!--                <option value="didnt_start">No llegó</option>-->
+<!--                <option value="didnt_finish">Desertó</option>-->
+<!--            </select></div>-->
+<!--            <div class="col-md-2 text-center" v-if="value">-->
+<!--                <div class="input-group">-->
+<!--                    <div class="input-group-prepend">-->
+<!--                        <div class="input-group-text">$</div>-->
+<!--                    </div>-->
+<!--                    <input type="text" class="form-control" placeholder="0" v-model="payment" @keyup.enter="updateInscription" @blur="updateInscription">-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="col-md-3 text-center">
                 <input type="text" class="form-control" placeholder="Escriba aquí" v-model="notes" @keyup.enter="updateInscription" @blur="updateInscription">
             </div>
