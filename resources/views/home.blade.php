@@ -39,7 +39,7 @@
                             </div>
                         </div>
                     @endif
-                    <p class="card-text">A continuación se muestran los cursos de educación cristiana disponibles para el semestre 2020-2.</p>
+                    <p class="card-text">A continuación se muestran los cursos de educación cristiana disponibles para el semestre 2021-1.</p>
                     <hr>
                     @if($member)
                         @if($past = $member->courses()->where('period','2018-2')->first())
@@ -84,7 +84,7 @@
         </div>
         <hr class="my-4 border-bottom">
         <blockquote class="blockquote">
-            <p class="mb-0">Para inscribirte en uno de los cursos a continuación, solo debes hacer click sobre el. 
+            <p class="mb-0">Para inscribirte en uno de los cursos a continuación, solo debes hacer click sobre el.
                 Para cancelar una inscripción puedes dar click nuevamente sobre el curso. Los cursos que aparecen en color <span class="badge grow_early text-white">verde</span> son los que tienes inscritos en el momento.</p>
         </blockquote>
         @foreach($days as $day)
@@ -108,4 +108,3 @@
         @endforeach
     </div>
 @endsection
-

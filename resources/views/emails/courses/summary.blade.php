@@ -1,7 +1,7 @@
 @component('mail::message')
 # Hola {{ $professor->first_name }}!
 
-Estas recibiendo este correo porque tienes una clase asignada para este semestre 2020-1!   
+Estas recibiendo este correo porque tienes una clase asignada para este semestre 2021-1!
 
 A continuación tienes la lista de personas inscritas en el curso.
 
@@ -13,7 +13,7 @@ A continuación tienes la lista de personas inscritas en el curso.
 @endforeach
 @endcomponent
 
-Si tienen alguna inquietud, puedes contactar a **Sandra Ramos** al correo electrónico: *sramos7785@gmail.com*, o al teléfono: *3176489132*  
+Si tienen alguna inquietud, puedes contactar a **Sandra Ramos** al correo electrónico: *sramos7785@gmail.com*, o al teléfono: *3176489132*
 
 Puedes revisar o cambiar la inscripción de tus estudiantes haciendo click en el botón a continuación.
 

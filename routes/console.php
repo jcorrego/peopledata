@@ -85,7 +85,7 @@ Artisan::command('people:fields', function () {
 })->describe('Sync field definitions information');
 
 Artisan::command('people:registered-mail', function () {
-    $period  = '2020-2';
+    $period  = '2021-1';
     $members = Member::whereHas('courses', function ($query) use ($period) {
         $query->where('period', $period);
     })->get();
@@ -101,7 +101,7 @@ Artisan::command('people:registered-mail', function () {
     }
 })->describe('Send emails to registered students');
 Artisan::command('courses:professor-mail', function () {
-    $period  = '2020-2';
+    $period  = '2021-1';
     $courses = Course::where('period', $period)->has('members')->get();
     foreach ($courses as $course) {
         if ($prof = $course->professor) {
@@ -119,7 +119,7 @@ Artisan::command('courses:professor-mail', function () {
 })->describe('Send emails to professor with course summary');
 Artisan::command('courses:duplicate {course_id?}', function ($course_id = 0) {
     if($course_id){
-        $period = '2020-2';
+        $period = '2021-1';
         $original = Course::find($course_id);
         $new = $original->replicate();
         $new->period = $period;

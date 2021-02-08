@@ -38,9 +38,9 @@
                 'active'=> url('/courses/create') == $url
             ],
             [
-                'link'=> '/members/unfinished/2020-1',
+                'link'=> '/members/unfinished/2021-1',
                 'label'=> 'Deserciones',
-                'active'=> url('/members/unfinished/2020-1') == $url
+                'active'=> url('/members/unfinished/2021-1') == $url
             ]
         ];
         @endphp
